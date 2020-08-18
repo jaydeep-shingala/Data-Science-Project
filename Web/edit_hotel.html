@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+<head>
+	
+  
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="styles.css" rel="stylesheet">
+  
+	<title>Hexplore-Hotel</title>
+	<!-- icons -->
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="assets/plugins/material/material.min.css">
+	<link rel="stylesheet" href="assets/css/material_style.css">
+	<!-- data tables -->
+	<link href="assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" rel="stylesheet"
+		type="text/css" />
+	<!-- animation -->
+	<link href="assets/css/pages/animate_page.css" rel="stylesheet">
+	<!-- Template Styles -->
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/hex_dp_dhz_icon.ico" />
+	
+</head>
+<!-- END HEAD -->
+
+<body
+	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
+	<div id="loader"></div>
+	<div id="myDivv" class="page-wrapper">
+		<!-- start header -->
+		<div class="page-header navbar navbar-fixed-top">
+			<div class="page-header-inner ">
+				<!-- logo start -->
+				<div class="page-logo">
+					<a href="index.html">
+						<img alt="" src="assets/img/logo.png">
+						<span class="logo-default">Hexplore</span> </a>
+				</div>
+				<!-- logo end -->
+				<ul class="nav navbar-nav navbar-left in">
+					<li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+				</ul>
+				
+				<!-- start mobile menu -->
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span></span>
+				</a>
+				<!-- end mobile menu -->
+				<!-- start header menu -->
+				<div class="top-menu">
+					<ul class="nav navbar-nav pull-right">
+						<!-- start notification dropdown -->
+						<div class="dropdown">
+  <button class="dropbtn">Setting</button>
+  <div class="dropdown-content">
+    <a href="user-profile-hotel.html">profile</a>
+    <a href="mailto:shingalajaydeep1508@gmail">Help</a>
+    <a href="login-hotel.html">Log out</a>
+  </div>
+</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end header -->
+		<!-- start page container -->
+		<div class="page-container">
+			<!-- start sidebar menu -->
+			<div class="sidebar-container">
+				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+					<div id="remove-scroll">
+						<ul class="sidemenu page-header-fixed p-t-20" data-keep-expanded="false" data-auto-scroll="true"
+							data-slide-speed="200">
+							<li class="sidebar-toggler-wrapper hide">
+								<div class="sidebar-toggler">
+									<span></span>
+								</div>
+							</li>
+							<li class="sidebar-user-panel">
+								<div class="user-panel">
+									<div class="row">
+										<div class="sidebar-userpic">
+											<img src="images/img_avatar.png" class="img-responsive" alt=""> </div>
+									</div>
+									<div class="profile-usertitle">
+										<div class="sidebar-userpic-name" id="name"></div>
+										
+									</div>
+								
+										<div class="sidebar-userpic-btn">
+										<a class="tooltips" href="user-profile-hotel.html" data-placement="top"
+											data-original-title="Profile">
+											<i class="material-icons">person_outline</i>
+										</a>
+										<a class="tooltips" href="login-hotel.html" data-placement="top"
+											data-original-title="Logout">
+											<i class="material-icons">input</i>
+										</a>
+									</div>
+								</div>
+							</li>
+					
+							<li class="nav-item start">
+								<a href="index-hotel.html" class="nav-link nav-toggle">
+									<i class="material-icons">dashboard</i>
+									<span class="title">Dashboard</span>
+									<span class="selected"></span>
+								</a>
+								
+							</li>
+							
+			<li class="nav-item">
+								<a href="#" class="nav-link nav-toggle">
+									<i class="material-icons">note_add</i>
+									<span class="title">Add Product</span>
+									<span class="arrow"></span>
+									
+								</a>
+												<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="add_hotel.html" class="nav-link ">
+											<span class="title">Add hotel details</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="all_hotel.html" class="nav-link ">
+											<span class="title">View hotel details</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="edit_hotel.html" class="nav-link ">
+											<span class="title">Edit hotel details</span>
+										</a>
+                            </li>
+							</ul>
+							
+							<li class="nav-item">
+								<a href="contactus.html" class="nav-link nav-toggle">
+									<i class="material-icons">info</i>
+									<span class="title">Help</span>
+									<span class="selected"></span>
+								</a>
+                            </li>
+                            <li class="nav-item">
+								<a href="main-about.html" class="nav-link nav-toggle">
+									<i class="material-icons">language</i>
+									<span class="title">About us</span>
+									<span class="selected"></span>
+								</a>
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<!-- end sidebar menu -->
+			<!-- start page content -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">Edit Hotel Details</div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="index-hotel.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li><a class="parent-item" href="#">Hotel</a>&nbsp;<i
+										class="fa fa-angle-right"></i>
+								</li>
+								<li class="active">Edit Hotel details</li>
+							</ol>
+						</div>
+					</div>
+					<div id="myData">
+					<p id="h"></p>
+					<div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Edit this data</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+     hrllo
+    </div>
+	</div id="overlay"></div>
+  </div>
+
+					</div>
+				
+				</div>
+			</div>
+			<!-- end page content -->
+			<!-- start chat sidebar -->
+			<div class="chat-sidebar-container" data-close-on-body-click="false">
+				<div class="chat-sidebar">
+					<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-toggle="tab">Theme
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#quick_sidebar_tab_2" class="nav-link tab-icon" data-toggle="tab"> Chat
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#quick_sidebar_tab_3" class="nav-link tab-icon" data-toggle="tab"> Settings
+							</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane chat-sidebar-settings in show active animated shake" role="tabpanel"
+							id="quick_sidebar_tab_1">
+							<div class="slimscroll-style">
+								<div class="theme-light-dark">
+									<h6>Sidebar Theme</h6>
+									<button type="button" data-theme="white"
+										class="btn lightColor btn-outline btn-circle m-b-10 theme-button">Light
+										Sidebar</button>
+									<button type="button" data-theme="dark"
+										class="btn dark btn-outline btn-circle m-b-10 theme-button">Dark
+										Sidebar</button>
+								</div>
+								<div class="theme-light-dark">
+									<h6>Sidebar Color</h6>
+									<ul class="list-unstyled">
+										<li class="complete">
+											<div class="theme-color sidebar-theme">
+												<a href="#" data-theme="white"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="dark"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="blue"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="indigo"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="cyan"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="green"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="red"><span class="head"></span><span
+														class="cont"></span></a>
+											</div>
+										</li>
+									</ul>
+									<h6>Header Brand color</h6>
+									<ul class="list-unstyled">
+										<li class="theme-option">
+											<div class="theme-color logo-theme">
+												<a href="#" data-theme="logo-white"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="logo-dark"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="logo-blue"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="logo-indigo"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="logo-cyan"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="logo-green"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="logo-red"><span class="head"></span><span
+														class="cont"></span></a>
+											</div>
+										</li>
+									</ul>
+									<h6>Header color</h6>
+									<ul class="list-unstyled">
+										<li class="theme-option">
+											<div class="theme-color header-theme">
+												<a href="#" data-theme="header-white"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="header-dark"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="header-blue"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="header-indigo"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="header-cyan"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="header-green"><span class="head"></span><span
+														class="cont"></span></a>
+												<a href="#" data-theme="header-red"><span class="head"></span><span
+														class="cont"></span></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- Start Doctor Chat -->
+						<div class="tab-pane chat-sidebar-chat animated slideInRight" id="quick_sidebar_tab_2">
+							<div class="chat-sidebar-list">
+								<div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd"
+									data-wrapper-class="chat-sidebar-list">
+									<div class="chat-header">
+										<h5 class="list-heading">Online</h5>
+									</div>
+									<ul class="media-list list-items">
+										<li class="media"><img class="media-object" src="assets/img/user/user3.jpg"
+												width="35" height="35" alt="...">
+											<i class="online dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">John Deo</h5>
+												<div class="media-heading-sub">Spine Surgeon</div>
+											</div>
+										</li>
+										<li class="media">
+											<div class="media-status">
+												<span class="badge badge-success">5</span>
+											</div> <img class="media-object" src="assets/img/user/user1.jpg" width="35"
+												height="35" alt="...">
+											<i class="busy dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Rajesh</h5>
+												<div class="media-heading-sub">Director</div>
+											</div>
+										</li>
+										<li class="media"><img class="media-object" src="assets/img/user/user5.jpg"
+												width="35" height="35" alt="...">
+											<i class="away dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Jacob Ryan</h5>
+												<div class="media-heading-sub">Ortho Surgeon</div>
+											</div>
+										</li>
+										<li class="media">
+											<div class="media-status">
+												<span class="badge badge-danger">8</span>
+											</div> <img class="media-object" src="assets/img/user/user4.jpg" width="35"
+												height="35" alt="...">
+											<i class="online dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Kehn Anderson</h5>
+												<div class="media-heading-sub">CEO</div>
+											</div>
+										</li>
+										<li class="media"><img class="media-object" src="assets/img/user/user2.jpg"
+												width="35" height="35" alt="...">
+											<i class="busy dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Sarah Smith</h5>
+												<div class="media-heading-sub">Anaesthetics</div>
+											</div>
+										</li>
+										<li class="media"><img class="media-object" src="assets/img/user/user7.jpg"
+												width="35" height="35" alt="...">
+											<i class="online dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Vlad Cardella</h5>
+												<div class="media-heading-sub">Cardiologist</div>
+											</div>
+										</li>
+									</ul>
+									<div class="chat-header">
+										<h5 class="list-heading">Offline</h5>
+									</div>
+									<ul class="media-list list-items">
+										<li class="media">
+											<div class="media-status">
+												<span class="badge badge-warning">4</span>
+											</div> <img class="media-object" src="assets/img/user/user6.jpg" width="35"
+												height="35" alt="...">
+											<i class="offline dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Jennifer Maklen</h5>
+												<div class="media-heading-sub">Nurse</div>
+												<div class="media-heading-small">Last seen 01:20 AM</div>
+											</div>
+										</li>
+										<li class="media"><img class="media-object" src="assets/img/user/user8.jpg"
+												width="35" height="35" alt="...">
+											<i class="offline dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Lina Smith</h5>
+												<div class="media-heading-sub">Ortho Surgeon</div>
+												<div class="media-heading-small">Last seen 11:14 PM</div>
+											</div>
+										</li>
+										<li class="media">
+											<div class="media-status">
+												<span class="badge badge-success">9</span>
+											</div> <img class="media-object" src="assets/img/user/user9.jpg" width="35"
+												height="35" alt="...">
+											<i class="offline dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Jeff Adam</h5>
+												<div class="media-heading-sub">Compounder</div>
+												<div class="media-heading-small">Last seen 3:31 PM</div>
+											</div>
+										</li>
+										<li class="media"><img class="media-object" src="assets/img/user/user10.jpg"
+												width="35" height="35" alt="...">
+											<i class="offline dot"></i>
+											<div class="media-body">
+												<h5 class="media-heading">Anjelina Cardella</h5>
+												<div class="media-heading-sub">Physiotherapist</div>
+												<div class="media-heading-small">Last seen 7:45 PM</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- End Doctor Chat -->
+						<!-- Start Setting Panel -->
+						<div class="tab-pane chat-sidebar-settings animated slideInUp" id="quick_sidebar_tab_3">
+							<div class="chat-sidebar-settings-list slimscroll-style">
+								<div class="chat-header">
+									<h5 class="list-heading">Layout Settings</h5>
+								</div>
+								<div class="chatpane inner-content ">
+									<div class="settings-list">
+										<div class="setting-item">
+											<div class="setting-text">Sidebar Position</div>
+											<div class="setting-set">
+												<select
+													class="sidebar-pos-option form-control input-inline input-sm input-small ">
+													<option value="left" selected="selected">Left</option>
+													<option value="right">Right</option>
+												</select>
+											</div>
+										</div>
+										<div class="setting-item">
+											<div class="setting-text">Header</div>
+											<div class="setting-set">
+												<select
+													class="page-header-option form-control input-inline input-sm input-small ">
+													<option value="fixed" selected="selected">Fixed</option>
+													<option value="default">Default</option>
+												</select>
+											</div>
+										</div>
+										<div class="setting-item">
+											<div class="setting-text">Sidebar Menu </div>
+											<div class="setting-set">
+												<select
+													class="sidebar-menu-option form-control input-inline input-sm input-small ">
+													<option value="accordion" selected="selected">Accordion</option>
+													<option value="hover">Hover</option>
+												</select>
+											</div>
+										</div>
+										<div class="setting-item">
+											<div class="setting-text">Footer</div>
+											<div class="setting-set">
+												<select
+													class="page-footer-option form-control input-inline input-sm input-small ">
+													<option value="fixed">Fixed</option>
+													<option value="default" selected="selected">Default</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="chat-header">
+										<h5 class="list-heading">Account Settings</h5>
+									</div>
+									<div class="settings-list">
+										<div class="setting-item">
+											<div class="setting-text">Notifications</div>
+											<div class="setting-set">
+												<div class="switch">
+													<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+														for="switch-1">
+														<input type="checkbox" id="switch-1" class="mdl-switch__input"
+															checked>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="setting-item">
+											<div class="setting-text">Show Online</div>
+											<div class="setting-set">
+												<div class="switch">
+													<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+														for="switch-7">
+														<input type="checkbox" id="switch-7" class="mdl-switch__input"
+															checked>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="setting-item">
+											<div class="setting-text">Status</div>
+											<div class="setting-set">
+												<div class="switch">
+													<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+														for="switch-2">
+														<input type="checkbox" id="switch-2" class="mdl-switch__input"
+															checked>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="setting-item">
+											<div class="setting-text">2 Steps Verification</div>
+											<div class="setting-set">
+												<div class="switch">
+													<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+														for="switch-3">
+														<input type="checkbox" id="switch-3" class="mdl-switch__input"
+															checked>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="chat-header">
+										<h5 class="list-heading">General Settings</h5>
+									</div>
+									<div class="settings-list">
+										<div class="setting-item">
+											<div class="setting-text">Location</div>
+											<div class="setting-set">
+												<div class="switch">
+													<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+														for="switch-4">
+														<input type="checkbox" id="switch-4" class="mdl-switch__input"
+															checked>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="setting-item">
+											<div class="setting-text">Save Histry</div>
+											<div class="setting-set">
+												<div class="switch">
+													<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+														for="switch-5">
+														<input type="checkbox" id="switch-5" class="mdl-switch__input"
+															checked>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="setting-item">
+											<div class="setting-text">Auto Updates</div>
+											<div class="setting-set">
+												<div class="switch">
+													<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+														for="switch-6">
+														<input type="checkbox" id="switch-6" class="mdl-switch__input"
+															checked>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end chat sidebar -->
+		</div>
+		<!-- end page container -->
+		<!-- start footer -->
+		<div class="page-footer">
+			<div class="page-footer-inner"> 2020 &copy; HEXPLORE
+			</div>
+			<div class="scroll-to-top">
+				<i class="icon-arrow-up"></i>
+			</div>
+		</div>
+		<!-- end footer -->
+	</div>
+	<!-- start js include path -->
+	<script src="assets/plugins/jquery/jquery.min.js"></script>
+	<script src="assets/plugins/popper/popper.min.js"></script>
+	<script src="assets/plugins/jquery-blockui/jquery.blockui.min.js"></script>
+	<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Common js-->
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/layout.js"></script>
+	<script src="assets/js/theme-color.js"></script>
+	<!-- data tables -->
+	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js"></script>
+	<script src="assets/js/pages/table/table_data.js"></script>
+	<!-- Material -->
+	<script src="assets/plugins/material/material.min.js"></script>
+	<!-- animation -->
+	<script src="assets/js/pages/ui/animations.js"></script>
+	<!-- end js include path -->
+	
+	
+	   
+	
+	
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use   https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+<!-- <script src="all_vehicles.js"></script>-->
+
+<script>
+var State;
+var userId;
+var url;
+//var userId = firebase.auth().currentUser.uid;
+function updatedata(key,a,b,c,d,e,f,g,h,i,j,k){
+	var MassageRef = firebase.database().ref('hotel/'+ userId);
+//	window.alert(f);
+	HotelName = document.getElementById(a).value;
+	State = document.getElementById(b).value;
+	City = document.getElementById(c).value;
+	HotelType = document.getElementById(d).value;
+	RoomType = document.getElementById(e).value;
+	AvailableOn = document.getElementById(f).value;
+	Meal = document.getElementById(g).value;
+	Rent = document.getElementById(h).value;
+	ContactNumber = document.getElementById(i).value;
+	OtherDetails = document.getElementById(j).value;
+	
+	
+	//window.alert(State);
+	MassageRef.child(key).update({
+		HotelName: HotelName,
+		State: State,
+		City: City,
+		HotelType: HotelType,
+		RoomType: RoomType, 
+		AvailableOn: AvailableOn,
+		Meal: Meal,
+		Rent: Rent,
+		//Photourl: url,
+		ContactNumber: ContactNumber,
+		OtherDetails: OtherDetails
+		})
+		
+	MassageRef.child(key).update({
+		Photourl: url
+		})
+		}
+function move(fileButton){   
+    var file = document.getElementById(fileButton).files[0];
+	if(file){
+// Create the file metadata
+var metadata = {
+  contentType: 'image/jpeg'
+};
+var storageRef = firebase.storage().ref();
+// Upload file and metadata to the object 'images/mountains.jpg'
+var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+// Listen for state changes, errors, and completion of the upload.
+uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+  function(snapshot) {
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//console.log('Upload is ' + progress + '% done');
+	 
+	 
+    switch (snapshot.state) {
+      case firebase.storage.TaskState.PAUSED: // or 'paused'
+        console.log('Upload is paused');
+        break;
+      case firebase.storage.TaskState.RUNNING: // or 'running'
+        console.log('Upload is running');
+        break;
+    }
+  }, function(error) {
+  // A full list of error codes is available at
+  // https://firebase.google.com/docs/storage/web/handle-errors
+  switch (error.code) {
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+      break;
+
+    case 'storage/canceled':
+      // User canceled the upload
+      break;
+
+    
+
+    case 'storage/unknown':
+      // Unknown error occurred, inspect error.serverResponse
+      break;
+  }
+  window.alert("pass 3");
+}, function() {
+  // Upload completed successfully, now we can get the download URL
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    console.log('File available at', downloadURL);
+	window.alert("Photo uploaded! Please press update this data button to update Photo");
+	url = downloadURL;
+	//document.getElementById("myBar").innerHTML = "Upload Done";
+  });
+});
+}
+else{
+window.alert("Image is not selected");
+}
+}
+var firebaseConfig = {
+    apiKey: "AIzaSyDKom0Dcwbd3Q0MvMaNBaQimpeaTjOtMLQ",
+    authDomain: "hexplore-daa3a.firebaseapp.com",
+    databaseURL: "https://hexplore-daa3a.firebaseio.com",
+    projectId: "hexplore-daa3a",
+    storageBucket: "hexplore-daa3a.appspot.com",
+    messagingSenderId: "907722720364",
+    appId: "1:907722720364:web:de03f4d90928319c12c449",
+    measurementId: "G-KWSCNW67RQ"
+  };
+   firebase.initializeApp(firebaseConfig);
+
+firebase.auth().onAuthStateChanged(function(user) {
+
+  if (user) {
+	userId = firebase.auth().currentUser.uid;
+	//window.alert(userId);
+	var dbblog = firebase.database().ref().child('/hotel/' + userId);
+	var reff=firebase.database().ref('hotel/'+'users/');
+	//window.alert(reff);
+	reff.on("value", function(user){
+		user.forEach(function(singleuser){
+			if(userId == singleuser.val().uid){
+			document.getElementById("name").innerHTML = singleuser.val().firstname;
+		}
+		})
+		//var mypage = showpage();
+	})
+	dbblog.on("value", function(blogs)
+	{
+		if(blogs.exists())
+		{
+			
+			var blogsHtml = " ";
+			//blogsHtml += "<div class='page-wrapper'>";
+			//	blogsHtml += "<div class='page-container'>";
+				//blogsHtml += "<div class='page-content-wrapper'>";
+				//blogsHtml += "<div class='page-content'>";
+				blogsHtml += "<div class='row'>";
+				var a=0;
+				var b=1000;
+				var c=10000;
+				var d=100000;
+				var e=1000000;
+				var f=10000000;
+				var g=100000000;
+				var h=1000000000;
+				var i=10000000000;
+				var j=100000000000;
+				var k=1000000000000;
+			blogs.forEach(function(singleBlog)
+			{
+				
+				//src = "all_vehicles.js"
+				//blogsHtml += "<div class='blogThumb'>";
+				blogsHtml += "<div class='col-lg-4 col-md-6 col-12 col-sm-6'>";
+				blogsHtml += "<div class='thumb-center'> <img width='400px' height='250px' src='";
+				blogsHtml += singleBlog.val().Photourl;
+				blogsHtml += "'/> </div><br> ";
+				blogsHtml += "<div <p>To update photo upload new Photo here</p><input type='file' id='"+k+"'> <button class='popup' class='mdl-button  mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default' type='button' onclick=move('"+k+"')>Upload</button>";
+				
+				blogsHtml += "</div>";
+				blogsHtml += "<div class='user-name'> <p> <b> Hotel Name: <input id='"+a+"' value='"+singleBlog.val().HotelName+"' type='text'> </b> </p> </div>";
+				
+				blogsHtml += "<div class='vehicle-box'>";
+				blogsHtml += "<div> <p> <strong> State :</strong> <input id='"+b+"' value='"+singleBlog.val().State +"' type='text'> </p></div>";
+				
+				blogsHtml += "<div> <p> <strong> City :</strong> <input id='"+c+"' value='"+singleBlog.val().City +"' type='text'> </p> </div>";
+				
+				blogsHtml += "<div> <p> <strong> HotelType :</strong> <input id='"+d+"' value='"+singleBlog.val().HotelType +"' type='text'></p> </div>";
+				blogsHtml += "<div> <p> <strong> RoomType :</strong> <input id='"+e+"' value='"+singleBlog.val().RoomType +"' type='text'></p> </div>";
+				
+				blogsHtml += "<div> <p> <strong> AvailableOn :</strong> <input id='"+f+"' value='"+singleBlog.val().AvailableOn +"' type='date' > </p> </div>";
+				blogsHtml += "<div> <p> <strong> Meal  :</strong> <input id='"+g+"' value='"+singleBlog.val().Meal +"' type='text' > </p> </div>";
+				
+				//blogsHtml += "<div> <p> <strong> VehicalType :</strong> <input id='"+i+"' value='"+singleBlog.val().VehicalType +"' ></p> </div>";
+				blogsHtml += "<div> <p> <strong> Rent :</strong> <input id='"+h+"' value= '"+singleBlog.val().Rent +"'></p> </div>";
+				//blogsHtml += "<div> <p> <strong> Driver Name :</strong> <input id='"+k+"' value='"+singleBlog.val().DriverName +"'></p> </div>";
+				blogsHtml += "<div> <p> <strong> Contact Number :</strong> <input id='"+i+"' value='"+singleBlog.val().ContactNumber +"'></p> </div>";
+				blogsHtml += "<div> <p> <strong> Other Details :</strong> <input id='"+j+"' value='"+singleBlog.val().OtherDetails +"'></p> </div>";
+				var deleteref = firebase.database().ref().child('/transportation/' + userId).child(singleBlog.key);
+				//window.alert(deleteref);
+				ref = firebase.database().ref().child('/transportation/' + userId);
+				jk= firebase.database().ref().child('transportation/' + userId);
+				//window.alert(document.getElementById("st").value);
+				blogsHtml += "<div><button data-modal-target='#modal' class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink' onclick = updatedata('"+singleBlog.key+"','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"','"+i+"','"+j+"') >update this Data</button> </div>";
+				//document.getElementById("nb").addEventListener('click', deleteblogrecoed, deleteref);✎
+				//deleteblogrecoed('"+singleBlog.key+"')
+				//onclick = deleteblogrecoed('"+deleteref+"')
+				blogsHtml += "</div>";
+				//blogsHtml += "</div>";
+				blogsHtml += "</div>";
+				a=a+1;
+				b=b+1;
+				c=c+1;
+				d=d+1;
+				e=e+1;
+				f=f+1;
+				g=g+1;
+				h=h+1;
+				i=i+1;
+				j=j+1;
+				k=k+1;
+				//blogsHtml += "</div>";
+			});
+			blogsHtml += "</div>";
+				//blogsHtml += "</div>";
+				//blogsHtml += "</div>";
+				//blogsHtml += "</div>";
+				//blogsHtml += "</div>";
+			$("#myData").html(blogsHtml);
+			
+		}
+		else{
+		window.alert("no data found");
+		}
+	});
+
+
+ } else {
+	  window.alert("You are not signed in!");
+  }
+  	
+});
+document.getElementById("loader").style.display = "none";
+  document.getElementById("myDivv").style.display = "block";
+
+</script>
+
+
+<!-- <script src="all_vehicles.js"></script> -->
+
+
+</body>
+
+
+
+</html>

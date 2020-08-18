@@ -1,0 +1,290 @@
+<html>
+	<head>
+		<title>Hexplore-project</title>
+		<link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+		<script src="jquery.min.js"></script>
+		<style>
+			*{
+		margin:0px;
+		padding:0px;
+		}
+		body{
+		font-family:"Antic";
+		color:#f7f7f7;
+		}
+		header{
+		background-color:#222c3c;
+		height:75px;
+		width:100%;
+		}
+		.child-header-1{
+		float:left;
+		margin:10px 0px 0px 110px;
+		font-size:22px;
+		}
+		.child-header-2{
+		float:right;
+		margin:5px 70px 0px 0px;
+		}
+		.nav {
+		  list-style-type: none;
+		  text-align: center;
+		  margin: 0;
+		  padding: 0;
+		}
+		.nav li{
+		margin-top:18px;
+		font-size:20px;
+		padding:0px 20px 0px 20px;
+		display:inline-block;
+		border-right:1px solid #f7f7f7;
+		}
+		li a{
+		text-decoration:none;
+		color:#f7f7f7;
+		}
+		li a:hover{
+		color:#02e0f5;
+		}
+        .overlay{
+		left:0;
+		top:0;
+		width:1349px;
+		height:2200px;
+		background: linear-gradient(to bottom right, #000000 0%,rgba(22,22,22,0.88) 75%,rgba(22,22,22,0.78) 100%);
+		}
+		.line{
+		position:absolute;
+		top:300px;
+		left:480px;
+		width:400px;
+		height:2px;
+		background-color:#02e0f5
+		}
+		.inner-heading1{
+		position:absolute;
+		top:110px;
+		right:-100px;
+		font-size:40px;
+		color:white;
+		animation-name:heading0;
+		animation-duration:5s;
+		animation-iteration-count:1;
+		animation-fill-mode: forwards;
+		}
+		@keyframes heading0{
+		0%{top:110px;
+			right:-200px;
+		}
+		100%{
+			top:230px;
+			right:565px;
+			transform:rotateX(360deg);
+		}
+		}
+		.heading-data{
+		position:absolute;
+		top:220px;
+		left:-1200px;
+		width:1200px;
+		height:150px;
+		font-size:25px;
+		animation-name:heading1;
+		animation-duration:4s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		}
+		@keyframes heading1{
+		0%{top:220px;
+			left:-1200px;
+		}
+		100%{
+			top:350px;
+			left:100px;
+			transform:rotateY(360deg);
+		}
+		}
+		.inner-heritage-1{
+		position:relative;
+		float:left;
+		height:400px;
+		width:750px;
+		}
+		.inner-heritage-1:hover{
+		transform:scale(1.03);
+		-webkit-box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+        -moz-box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+        box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+		}
+		.inner-heritage-2{
+		position:relative;
+		top:70px;
+		font-size:23px;
+		right:40px;
+		width:300px;
+		float:right;
+		height:200px;
+		}
+		.inner-heritage-2 h1{
+		margin-bottom:30;
+		}
+		.line-heritage-h{
+		position:absolute;
+		top:60px;
+		width:230px;
+		height:2px;
+		background-color:#02e0f5;
+		}
+		.inner-heritage{
+		position:absolute;
+		top:670px;
+		left:65px;
+		width:1200px;
+		height:400px;
+		}
+		.inner-cultural-1{
+		position:relative;
+		right:0px;
+		float:right;
+		height:500px;
+		}
+		.inner-cultural-1:hover{
+		transform:scale(1.03);
+		-webkit-box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+        -moz-box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+        box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+		}
+		.inner-cultural-2{
+		position:relative;
+		top:100px;
+		font-size:23px;
+		left:140px;
+		width:300px;
+		float:left;
+		height:500px;
+		}
+		.inner-cultural-2 h1{
+		margin-bottom:30px;
+		}
+		.line-cultural-h{
+		position:absolute;
+		top:60px;
+		width:230px;
+		height:2px;
+		background-color:#02e0f5;
+		}
+		.inner-cultural{
+		position:absolute;
+		top:1200px;
+		left:90px;
+		width:1090px;
+		height:500px;
+		}
+		.inner-art-1{
+		position:relative;
+		float:left;
+		height:350px;
+		}
+		.inner-art-1:hover{
+		transform:scale(1.03);
+		-webkit-box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+        -moz-box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+        box-shadow: 16px 10px 33px -1px rgba(222,255,253,0.54);
+		}
+		.inner-art-2{
+		position:relative;
+		top:80px;
+		font-size:23px;
+		right:50px;
+		width:300px;
+		float:right;
+		height:200px;
+		}
+		.inner-art-2 h1{
+		margin-bottom:30px;
+		}
+		.line-art-h{
+		position:absolute;
+		top:60px;
+		width:110px;
+		height:2px;
+		background-color:#02e0f5;
+		}
+		.inner-art{
+		position:absolute;
+		top:1870px;
+		left:160px;
+		width:1090px;
+		height:350px;
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="main-header">
+				<div class="child-header-1">
+					<h1>HEXPLORE</h1>
+				</div>
+				<div class="child-header-2">
+					<ul class="nav">
+						<li ><a href="main.html">Home</a></li>
+						<li ><a href="main-about.html">About</a></li>
+						<li ><a href="main-project.html">Project</a></li>
+						<li style="border-right:none;"><a href="main-contact.html" >Contact Us</a></li>
+				    </ul>
+				</div>
+			</div>
+		</header>
+		<div class="main-div">
+			<div class="overlay">
+			<div class="main-heading">
+				<div class="inner-heading1">About India</div>
+				<span class="line"></span>
+			    <div class="heading-data">
+				India is one of the oldest civilizations in the world with a kaleidoscopic variety and
+				rich cultural heritage. It has achieved all-round socio-economic progress since Independence. As the 7th largest country in the world,
+				India stands apart from the rest of Asia, marked off as it is by mountains and the sea, which give the country a distinct geographical entity.
+				Bounded by the Great Himalayas in the north, it stretches southwards and at the Tropic of Cancer, tapers off into the Indian Ocean between the Bay of Bengal
+				on the east and the Arabian Sea on the west</div>
+			</div>
+			<div class="div-heritage">
+				<div class="inner-heritage">
+					<div class="inner-heritage-1">
+					<img src="images/project_img/p_img.jpg" width="750px" height="400px">
+					</div>
+					<div class="inner-heritage-2">
+					 <h1>HERITAGE</h1>
+					 <span class="line-heritage-h"></span>
+					 <p>Heritage is our ancient treasur.It is god gifted and our countries pride.there only some of the countries are there which have the heritage like us but 
+					what we have is so much precious</p>
+					</div>
+				</div>
+				<div class="inner-cultural">
+					<div class="inner-cultural-1">
+						<img src="images/project_img/p_img1.jpg" width="400px" height="500px">
+					</div>
+					<div class="inner-cultural-2">
+					 <h1>CULTURE</h1>
+					 <span class="line-cultural-h"></span>
+					 <p> indian culture, culture is very larg and warm which represnt our prosperity,calmness indian culture represnt people of india sculpture of india
+					 ,music,language,food of india</p>
+					</div>
+				</div>
+				<div class="inner-art">
+					<div class="inner-art-1">
+						<img src="images/project_img/p_img2.jpg" width="600px" height="350px">
+					</div>
+					<div class="inner-art-2">
+					 <h1>ART</h1>
+					 <span class="line-art-h"></span>
+					 <p> Indian art consists of a variety of art forms, including painting, sculpture,
+					 pottery and textile arts such as woven silk.</p>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+</html>

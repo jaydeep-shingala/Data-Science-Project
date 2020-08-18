@@ -1,0 +1,202 @@
+<html>
+	<head>
+		<title>Hexplore-central-page</title>
+		<link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Happy Monkey' rel='stylesheet'>
+		<script src="jquery.min.js"></script>
+		<style>
+			*{
+		margin:0px;
+		padding:0px;
+		}
+		body{
+		font-family:"Antic";
+		color:#f7f7f7;
+		}
+		header{
+		background-color:#222c3c;
+		height:75px;
+		width:100%;
+		}
+		.child-header-1{
+		float:left;
+		margin:10px 0px 0px 110px;
+		font-size:22px;
+		}
+		.child-header-2{
+		float:right;
+		margin:5px 70px 0px 0px;
+		}
+		.nav {
+		  list-style-type: none;
+		  text-align: center;
+		  margin: 0;
+		  padding: 0;
+		}
+		.nav li{
+		margin-top:18px;
+		font-size:20px;
+		padding:0px 20px 0px 20px;
+		display:inline-block;
+		border-right:1px solid #f7f7f7;
+		}
+		li a{
+		text-decoration:none;
+		color:#f7f7f7;
+		}
+		li a:hover{
+		color:#02e0f5;
+		}
+		.main-div{
+			height:700px;
+			position:relative;
+		}
+		.overlay{
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+		background: linear-gradient(to bottom right, #000000 0%,rgba(22,22,22,0.88) 75%,rgba(22,22,22,0.78) 100%);
+		}
+		.parent-div{
+		position:absolute;
+		top:150px;
+		left:70px;
+		}
+		.hotel{
+		width:350px;
+		height:390px;
+		background-color:#222c3c;
+		float:left;
+		margin-right:70px;
+		border-bottom:5px solid #02e0f5;
+		border-radius:10px;
+		}
+		.hotel:hover{
+		transform:scale(1.03);
+		-webkit-box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+		-moz-box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+		box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+        }
+		.restauant{
+		width:350px;
+		height:390px;
+		float:left;
+		margin-right:70px;
+		background-color:#222c3c;
+		border-bottom:5px solid #02e0f5;
+		border-radius:10px;
+		}
+		.restauant:hover{
+		transform:scale(1.03);
+		-webkit-box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+		-moz-box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+	box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+		}
+		.travellers{
+		width:350px;
+		height:390px;
+		background-color:#222c3c;
+		float:left;
+		border-bottom:5px solid #02e0f5;
+		border-radius:10px;
+		}
+		.travellers:hover{
+		transform:scale(1.03);
+		-webkit-box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+		-moz-box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+		box-shadow: 2px -4px 40px -6px rgba(247,247,247,1);
+		}
+		.welcome{
+		position:absolute;
+		font-size:50px;
+		text-shadow: 2px 2px 4px #02e0f5;
+		top:45px;
+		left:-800px;
+		animation-name:heading1;
+		animation-duration:5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		}
+		@keyframes heading1{
+		0%{top:45px;
+			left:-800px;
+		}
+		100%{
+			top:45px;
+			left:110px;
+			transform:rotateY(360deg);
+		}
+		}
+		div img{
+		position:relative;
+		top:60px;
+		left:15px;
+		border-radius:20px;
+		}
+		h5{
+		position:relative;
+		font-size:30px;
+		top:30px;
+		left:85px;
+		}
+		.btn{
+		position:relative;
+		top:100px;
+		left:100px;
+		color:#222c3c;
+		font-weight:bolder;
+		text-decoration:none;
+		font-size:20px;
+		border-radius:10px;
+		padding:10px 50px;
+		background-color:#f7f7f7;
+		}
+		.btn:hover{
+		background-color:#02e0f5;
+		transform:scale(1.6);
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="main-header">
+				<div class="child-header-1">
+					<h1>HEXPLORE</h1>
+				</div>
+				<div class="child-header-2">
+					<ul class="nav">
+						<li ><a href="main.html">Home</a></li>
+						<li ><a href="main-about.html">About</a></li>
+						<li ><a href="main-project.html">Project</a></li>
+						<li style="border-right:none;"><a href="main-contact.html">Contact Us</a></li>
+				    </ul>
+				</div>
+			</div>
+		</header>
+		<div class="main-div">
+			<div class="overlay"></div>
+			<p class="welcome">You are most welcome in our Hexplore community !</p>
+			<div class="parent-div">
+				<div class="hotel">
+					<h5 class="T" style="position:relative;top:30px;left:130px;">HOTEL</h5>
+					<img src="images/pic/5.jpg" height="200px" width="320px">
+					<a href="login-hotel.html" class="btn">Login</a>
+				</div>
+				<div class="restauant">
+					<h5 class="T">RESTAURANT</h5>
+					<img src="images/pic/r-pic.jpg" height="200px" width="320px">
+					<a href="login-restaurant.html" class="btn">Login</a>
+				</div>
+				<div class="travellers">
+					<h5 class="T">TRAVELLERS</h5>
+					<img src="images/pic/11.jpg" height="200px" width="320px">
+					<a href="login-traveller.html" class="btn">Login</a>
+				</div>
+			</div>
+		</div>	
+	</body>
+</html>

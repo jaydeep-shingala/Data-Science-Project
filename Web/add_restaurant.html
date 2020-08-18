@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description" content="Responsive Admin Template" />
+    <meta name="author" content="SmartUniversity" />
+    <title>HEXPLORE-Restaurant</title>
+    <!-- icons -->
+    <link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!--bootstrap -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Material Design Lite CSS -->
+    <link rel="stylesheet" href="assets/plugins/material/material.min.css">
+    <link rel="stylesheet" href="assets/css/material_style.css">
+    <!-- animation -->
+    <link href="assets/css/pages/animate_page.css" rel="stylesheet">
+    <!-- Template Styles -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+    <!-- dropzone -->
+    <link href="assets/plugins/dropzone/dropzone.css" rel="stylesheet" media="screen">
+    <!-- Date Time item CSS -->
+    <link rel="stylesheet" href="assets/plugins/flatpicker/flatpickr.min.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/hex_dp_dhz_icon.ico" />
+</head>
+<!-- END HEAD -->
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
+    <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="mas"></p>
+  </div>
+
+</div>
+	<div class="page-wrapper">
+        <!-- start header -->
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img alt="" src="images/restaurant_logo_bz6_icon.ico">
+                        <span class="logo-default">HEXPLORE</span> </a>
+                </div>
+                <!-- logo end -->
+                <ul class="nav navbar-nav navbar-left in">
+                    <li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+                </ul>
+                
+                <!-- start mobile menu -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+                <!-- end mobile menu -->
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- start notification dropdown -->
+                        <div class="dropdown">
+  <button class="dropbtn">Setting</button>
+  <div class="dropdown-content">
+    <a href="user-profile-restaurant.html">profile</a>
+    <a href="mailto:shingalajaydeep1508@gmail">Help</a>
+    <a href="login-restaurant.html">Log out</a>
+  </div>
+</div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+        <!-- start page container -->
+        <div class="page-container">
+            <!-- start sidebar menu -->
+            <div class="sidebar-container">
+                <div class="sidemenu-container navbar-collapse collapse fixed-menu">
+                    <div id="remove-scroll">
+                        <ul class="sidemenu page-header-fixed p-t-20" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                            <li class="sidebar-toggler-wrapper hide">
+                                <div class="sidebar-toggler">
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li class="sidebar-user-panel">
+                                <div class="user-panel">
+                                    <div class="row">
+                                        <div class="sidebar-userpic">
+                                            <img src="images/img_avatar.png" class="img-responsive" alt=""> </div>
+                                    </div>
+                                    <div class="profile-usertitle">
+                                        <div class="sidebar-userpic-name" id="name"> </div>
+                                        
+                                    </div>
+                                    <div class="sidebar-userpic-btn">
+									<a class="tooltips" href="user-profile-restaurant.html" data-placement="top"
+											data-original-title="Profile">
+											<i class="material-icons">person_outline</i>
+										</a>
+                                        <a class="tooltips" href="login-restaurant.html" data-placement="top" data-original-title="Logout">
+                                            <i class="material-icons">input</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item start">
+                                <a href="index-restaurant.html" class="nav-link nav-toggle">
+                                    <i class="material-icons">dashboard</i>
+                                    <span class="title">Dashboard</span>
+                                    <span class="selected"></span>
+                                </a>
+                                
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link nav-toggle">
+                                        <i class="material-icons">note_add</i>
+                                        <span class="title">Add Product</span>
+                                        <span class="arrow"></span>
+
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item">
+                                            <a href="add_restaurant.html" class="nav-link ">
+                                                <span class="title">Add Restaurant Details</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="all_restaurant.html" class="nav-link ">
+                                                <span class="title">View Restaurant Details</span>
+                                            </a>
+                                        </li>
+										<li class="nav-item">
+										<a href="edit_restaurant.html" class="nav-link ">
+											<span class="title">Edit Restaurant Details</span>
+										</a>
+									</li>
+                                        
+                                    </ul>
+                                    
+                                    <li class="nav-item">
+                                        <a href="contactus.html" class="nav-link nav-toggle">
+                                            <i class="material-icons">info</i>
+                                            <span class="title">Help</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="main-about.html" class="nav-link nav-toggle">
+                                            <i class="material-icons">language</i>
+                                            <span class="title">About us</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="entry">
+
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <div class="page-bar">
+                            <div class="page-title-breadcrumb">
+                                <div class=" pull-left">
+                                    <div class="page-title">Add Restaurant Details</div>
+                                </div>
+                                <ol class="breadcrumb page-breadcrumb pull-right">
+                                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index-restaurant.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li><a class="parent-item" href="#">Restaurant</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li class="active">Add Restaurant Details</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <div class="card-head">
+                                        <header>Basic Information</header>
+                                        <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+				                           <i class = "material-icons">more_vert</i>
+				                       		 </button>
+                                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
+                                            <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action</li>
+                                            <li class="mdl-menu__item"><i class="material-icons">print</i>Another action</li>
+                                            <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else here</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body row">
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                <input class="mdl-textfield__input" type="text" id="State">
+                                                <label class="mdl-textfield__label">State</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                <input class="mdl-textfield__input" type="text" id="City">
+                                                <label class="mdl-textfield__label">city</label>
+                                            </div>
+                                        </div>
+										<div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                <input class="mdl-textfield__input" type="text" id="RestaurantName">
+                                                <label class="mdl-textfield__label">Restaurant Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                                                <input class="mdl-textfield__input" type="text" id="RestaurantIs" value="" readonly tabIndex="-1">
+                                                <label for="sample2" class="pull-right margin-0">
+									                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+									            </label>
+                                                <label for="RestaurantIs" class="mdl-textfield__label">Restaurant Is  ?</label>
+                                                <ul data-mdl-for="RestaurantIs" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                    <li class="mdl-menu__item" data-val="1">Vegetarian</li>
+                                                    <li class="mdl-menu__item" data-val="2">Non-Vegetarian</li>
+                                                    <li class="mdl-menu__item" data-val="3">Both Vegetarian/Non-Vegetarian</li>
+                                                    
+                                                    <!-- <select id="VehicalIs" name="country">
+													<option value="taxi">Taxi</option>
+													<option value="suv">SUV</option>
+													<option value="bus">bus</option>
+													<option value="carriage">carriage</option>
+													<option value="other">other</option>														
+													</select> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+										
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                <input class="mdl-textfield__input" type="text" id="Address">
+                                                <label class="mdl-textfield__label">Address</label>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                <input class="mdl-textfield__input" type="date" id="AvailableNotOn">
+                                                <label class="mdl-textfield__label">Available Not on</label>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                <input class="mdl-textfield__input" type="number" id="AvailableTables">
+                                                <label class="mdl-textfield__label">Available tables</label>
+                                            </div>
+                                        </div>
+										
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                                                <input class="mdl-textfield__input" type="text" id="RestaurantServices" value="" readonly tabIndex="-1">
+                                                <label for="RestaurantServices" class="pull-right margin-0">
+									                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+									            </label>
+                                                <label for="RestaurantServices" class="mdl-textfield__label">Restaurant Services</label>
+                                                <ul data-mdl-for="RestaurantServices" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                    <li class="mdl-menu__item" data-val="1">Breakfast</li>
+                                                    <li class="mdl-menu__item" data-val="2">lunch</li>
+                                                    <li class="mdl-menu__item" data-val="3">Dinner</li>
+                                                    <li class="mdl-menu__item" data-val="4">Brunch</li>
+                                                    <li class="mdl-menu__item" data-val="5">Late Night</li>
+                                                    <li class="mdl-menu__item" data-val="6">All timing</li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                                                <input class="mdl-textfield__input" type="text" id="RestaurantType" value="" readonly tabIndex="-1">
+                                                <label for="RestaurantType" class="pull-right margin-0">
+									                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+									            </label>
+                                                <label for="RestaurantType" class="mdl-textfield__label">Restaurant Type</label>
+                                                <ul data-mdl-for="RestaurantType" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                    <li class="mdl-menu__item" data-val="1">AC</li>
+                                                    <li class="mdl-menu__item" data-val="2">Non-AC</li>
+                                                    <li class="mdl-menu__item" data-val="3">Both AC/Non-AC</li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                <input class="mdl-textfield__input" type="number" id="ContactNumber">
+                                                <label class="mdl-textfield__label">Telephone number</label>
+                                            </div>
+                                        </div>
+										<div class="col-lg-6 p-t-20">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                <input class="mdl-textfield__input" type="text" id="Speciality">
+                                                <label class="mdl-textfield__label">Your Speciality/Authentic Food</label>
+                                            </div>
+                                        </div>
+										<div class="col-lg-6 p-t-20">
+                                            
+                                        </div>
+										<div>
+										<h6>Upload photo</h6>
+										    <input type="file" id="fileButton">
+											<button class="popup" class="mdl-button  mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default" type="button" onclick="move()">Upload</button>
+											<div id="myProgress">
+  <div id="myBar">0%</div>
+</div>
+
+											</div>
+                                      <!--  <div class="col-lg-12 p-t-20">
+										<div id="Photo" type="file" accept="image/*">
+                                            <h6>Upload vehicle Photos</h6>
+                                            <label id="id_dropzone" class="dropzone">
+												<div class="dz-message">
+												<div class="dropIcon">
+													<i class="material-icons">cloud_upload</i>
+												</div>
+												<h3>Drop files here to upload.</h3>
+												</div>
+											</label>
+											</div>
+                                        </div>-->
+                                    </div>
+                                    <div class="col-lg-12 p-t-20">
+                                        <div class="mdl-textfield mdl-js-textfield txt-full-width">
+                                            <textarea class="mdl-textfield__input" rows="4" id="other"></textarea>
+                                            <label class="mdl-textfield__label">Other Details</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 p-t-20 text-center">
+                                        <!--     	<button type="button" value="submit"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>-->
+
+                                        <button type="submit"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink" value="submit">submit</button>
+                                        <button type="button" onclick="myfi()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+	<script>
+	
+
+function myfi() {
+    window.location = "add_restaurant.html";
+}
+   
+function move(){   
+    var file = document.getElementById("fileButton").files[0];
+	if(file){
+// Create the file metadata
+var metadata = {
+  contentType: 'image/jpeg'
+};
+var storageRef = firebase.storage().ref();
+// Upload file and metadata to the object 'images/mountains.jpg'
+var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+// Listen for state changes, errors, and completion of the upload.
+uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+  function(snapshot) {
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//console.log('Upload is ' + progress + '% done');
+	 var elem = document.getElementById("myBar");
+	 var width=progress;
+	 elem.style.width = progress + "%";
+	 elem.innerHTML = progress + "%";
+	 
+	 
+    switch (snapshot.state) {
+      case firebase.storage.TaskState.PAUSED: // or 'paused'
+        console.log('Upload is paused');
+        break;
+      case firebase.storage.TaskState.RUNNING: // or 'running'
+        console.log('Upload is running');
+        break;
+    }
+  }, function(error) {
+  // A full list of error codes is available at
+  // https://firebase.google.com/docs/storage/web/handle-errors
+  switch (error.code) {
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+      break;
+
+    case 'storage/canceled':
+      // User canceled the upload
+      break;
+
+    
+
+    case 'storage/unknown':
+      // Unknown error occurred, inspect error.serverResponse
+      break;
+  }
+  window.alert("pass 3");
+}, function() {
+  // Upload completed successfully, now we can get the download URL
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    console.log('File available at', downloadURL);
+	//window.alert(downloadURL);
+	url = downloadURL;
+	document.getElementById("myBar").innerHTML = "Upload Done";
+  });
+});
+}
+else{
+window.alert("Image is not selected");
+}
+}
+</script>
+    <!-- end page content -->
+    <!-- start chat sidebar -->
+    <div class="chat-sidebar-container" data-close-on-body-click="false">
+        <div class="chat-sidebar">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-toggle="tab">Theme
+                                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#quick_sidebar_tab_2" class="nav-link tab-icon" data-toggle="tab"> Chat
+                                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#quick_sidebar_tab_3" class="nav-link tab-icon" data-toggle="tab">  Settings
+                            </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane chat-sidebar-settings in show active animated shake" role="tabpanel" id="quick_sidebar_tab_1">
+                    <div class="slimscroll-style">
+                        <div class="theme-light-dark">
+                            <h6>Sidebar Theme</h6>
+                            <button type="button" data-theme="white" class="btn lightColor btn-outline btn-circle m-b-10 theme-button">Light Sidebar</button>
+                            <button type="button" data-theme="dark" class="btn dark btn-outline btn-circle m-b-10 theme-button">Dark Sidebar</button>
+                        </div>
+                        <div class="theme-light-dark">
+                            <h6>Sidebar Color</h6>
+                            <ul class="list-unstyled">
+                                <li class="complete">
+                                    <div class="theme-color sidebar-theme">
+                                        <a href="#" data-theme="white"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="dark"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="blue"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="indigo"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="cyan"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="green"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="red"><span class="head"></span><span class="cont"></span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h6>Header Brand color</h6>
+                            <ul class="list-unstyled">
+                                <li class="theme-option">
+                                    <div class="theme-color logo-theme">
+                                        <a href="#" data-theme="logo-white"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="logo-dark"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="logo-blue"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="logo-indigo"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="logo-cyan"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="logo-green"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="logo-red"><span class="head"></span><span class="cont"></span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h6>Header color</h6>
+                            <ul class="list-unstyled">
+                                <li class="theme-option">
+                                    <div class="theme-color header-theme">
+                                        <a href="#" data-theme="header-white"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="header-dark"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="header-blue"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="header-indigo"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="header-cyan"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="header-green"><span class="head"></span><span class="cont"></span></a>
+                                        <a href="#" data-theme="header-red"><span class="head"></span><span class="cont"></span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start Doctor Chat -->
+                <div class="tab-pane chat-sidebar-chat animated slideInRight" id="quick_sidebar_tab_2">
+                    <div class="chat-sidebar-list">
+                        <div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd" data-wrapper-class="chat-sidebar-list">
+                            <div class="chat-header">
+                                <h5 class="list-heading">Online</h5>
+                            </div>
+                            <ul class="media-list list-items">
+                                <li class="media"><img class="media-object" src="assets/img/user/user3.jpg" width="35" height="35" alt="...">
+                                    <i class="online dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">John Deo</h5>
+                                        <div class="media-heading-sub">Spine Surgeon</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-status">
+                                        <span class="badge badge-success">5</span>
+                                    </div> <img class="media-object" src="assets/img/user/user1.jpg" width="35" height="35" alt="...">
+                                    <i class="busy dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Rajesh</h5>
+                                        <div class="media-heading-sub">Director</div>
+                                    </div>
+                                </li>
+                                <li class="media"><img class="media-object" src="assets/img/user/user5.jpg" width="35" height="35" alt="...">
+                                    <i class="away dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Jacob Ryan</h5>
+                                        <div class="media-heading-sub">Ortho Surgeon</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-status">
+                                        <span class="badge badge-danger">8</span>
+                                    </div> <img class="media-object" src="assets/img/user/user4.jpg" width="35" height="35" alt="...">
+                                    <i class="online dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Kehn Anderson</h5>
+                                        <div class="media-heading-sub">CEO</div>
+                                    </div>
+                                </li>
+                                <li class="media"><img class="media-object" src="assets/img/user/user2.jpg" width="35" height="35" alt="...">
+                                    <i class="busy dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Sarah Smith</h5>
+                                        <div class="media-heading-sub">Anaesthetics</div>
+                                    </div>
+                                </li>
+                                <li class="media"><img class="media-object" src="assets/img/user/user7.jpg" width="35" height="35" alt="...">
+                                    <i class="online dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Vlad Cardella</h5>
+                                        <div class="media-heading-sub">Cardiologist</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="chat-header">
+                                <h5 class="list-heading">Offline</h5>
+                            </div>
+                            <ul class="media-list list-items">
+                                <li class="media">
+                                    <div class="media-status">
+                                        <span class="badge badge-warning">4</span>
+                                    </div> <img class="media-object" src="assets/img/user/user6.jpg" width="35" height="35" alt="...">
+                                    <i class="offline dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Jennifer Maklen</h5>
+                                        <div class="media-heading-sub">Nurse</div>
+                                        <div class="media-heading-small">Last seen 01:20 AM</div>
+                                    </div>
+                                </li>
+                                <li class="media"><img class="media-object" src="assets/img/user/user8.jpg" width="35" height="35" alt="...">
+                                    <i class="offline dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Lina Smith</h5>
+                                        <div class="media-heading-sub">Ortho Surgeon</div>
+                                        <div class="media-heading-small">Last seen 11:14 PM</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-status">
+                                        <span class="badge badge-success">9</span>
+                                    </div> <img class="media-object" src="assets/img/user/user9.jpg" width="35" height="35" alt="...">
+                                    <i class="offline dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Jeff Adam</h5>
+                                        <div class="media-heading-sub">Compounder</div>
+                                        <div class="media-heading-small">Last seen 3:31 PM</div>
+                                    </div>
+                                </li>
+                                <li class="media"><img class="media-object" src="assets/img/user/user10.jpg" width="35" height="35" alt="...">
+                                    <i class="offline dot"></i>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Anjelina Cardella</h5>
+                                        <div class="media-heading-sub">Physiotherapist</div>
+                                        <div class="media-heading-small">Last seen 7:45 PM</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Doctor Chat -->
+                <!-- Start Setting Panel -->
+                <div class="tab-pane chat-sidebar-settings animated slideInUp" id="quick_sidebar_tab_3">
+                    <div class="chat-sidebar-settings-list slimscroll-style">
+                        <div class="chat-header">
+                            <h5 class="list-heading">Layout Settings</h5>
+                        </div>
+                        <div class="chatpane inner-content ">
+                            <div class="settings-list">
+                                <div class="setting-item">
+                                    <div class="setting-text">Sidebar Position</div>
+                                    <div class="setting-set">
+                                        <select class="sidebar-pos-option form-control input-inline input-sm input-small ">
+	                                                <option value="left" selected="selected">Left</option>
+	                                                <option value="right">Right</option>
+                                            	</select>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-text">Header</div>
+                                    <div class="setting-set">
+                                        <select class="page-header-option form-control input-inline input-sm input-small ">
+	                                                <option value="fixed" selected="selected">Fixed</option>
+	                                                <option value="default">Default</option>
+                                            	</select>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-text">Sidebar Menu </div>
+                                    <div class="setting-set">
+                                        <select class="sidebar-menu-option form-control input-inline input-sm input-small ">
+	                                                <option value="accordion" selected="selected">Accordion</option>
+	                                                <option value="hover">Hover</option>
+                                            	</select>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-text">Footer</div>
+                                    <div class="setting-set">
+                                        <select class="page-footer-option form-control input-inline input-sm input-small ">
+	                                                <option value="fixed">Fixed</option>
+	                                                <option value="default" selected="selected">Default</option>
+                                            	</select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-header">
+                                <h5 class="list-heading">Account Settings</h5>
+                            </div>
+                            <div class="settings-list">
+                                <div class="setting-item">
+                                    <div class="setting-text">Notifications</div>
+                                    <div class="setting-set">
+                                        <div class="switch">
+                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+									                  <input type = "checkbox" id = "switch-1" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-text">Show Online</div>
+                                    <div class="setting-set">
+                                        <div class="switch">
+                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-7">
+									                  <input type = "checkbox" id = "switch-7" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-text">Status</div>
+                                    <div class="setting-set">
+                                        <div class="switch">
+                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+									                  <input type = "checkbox" id = "switch-2" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-text">2 Steps Verification</div>
+                                    <div class="setting-set">
+                                        <div class="switch">
+                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+									                  <input type = "checkbox" id = "switch-3" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-header">
+                                <h5 class="list-heading">General Settings</h5>
+                            </div>
+                            <div class="settings-list">
+                                <div class="setting-item">
+                                    <div class="setting-text">Location</div>
+                                    <div class="setting-set">
+                                        <div class="switch">
+                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-4">
+									                  <input type = "checkbox" id = "switch-4" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-text">Save Histry</div>
+                                    <div class="setting-set">
+                                        <div class="switch">
+                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-5">
+									                  <input type = "checkbox" id = "switch-5" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-text">Auto Updates</div>
+                                    <div class="setting-set">
+                                        <div class="switch">
+                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-6">
+									                  <input type = "checkbox" id = "switch-6" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- end chat sidebar -->
+    </div>
+    <!-- end page container -->
+    <!-- start footer -->
+    <div class="page-footer">
+        <div class="page-footer-inner">2020 &copy; HEXPLORE
+
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <!-- end footer -->
+    </div>
+
+
+    <!-- start js include path -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="assets/plugins/popper/popper.min.js"></script>
+    <script src="assets/plugins/jquery-blockui/jquery.blockui.min.js"></script>
+    <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Common js-->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/theme-color.js"></script>
+    <!-- Material -->
+    <script src="assets/plugins/material/material.min.js"></script>
+    <script src="assets/js/pages/material_select/getmdl-select.js"></script>
+    <!-- dropzone -->
+    <script src="assets/plugins/dropzone/dropzone.js"></script>
+    <script src="assets/plugins/dropzone/dropzone-call.js"></script>
+    <!-- animation -->
+    <script src="assets/js/pages/ui/animations.js"></script>
+    <!-- date and time 	 -->
+    <script src="assets/plugins/flatpicker/flatpickr.min.js"></script>
+    <script src="assets/js/pages/datetime/datetime-data.js"></script>
+    <!-- end js include path -->
+
+
+   
+	
+
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use   https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+
+
+    <script src="add_restaurant.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>

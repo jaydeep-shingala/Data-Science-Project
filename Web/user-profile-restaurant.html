@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Mirrored from radixtouch.in/templates/admin/hotel/source/user_profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2020 10:38:25 GMT -->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<title>Hexplore-Restaurants-profile</title>
+	<!-- icons -->
+	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="assets/plugins/material/material.min.css">
+	<link rel="stylesheet" href="assets/css/material_style.css">
+	<!-- animation -->
+	<link href="assets/css/pages/animate_page.css" rel="stylesheet">
+	<!-- Template Styles -->
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/hex_dp_dhz_icon.ico" />
+</head>
+<!-- END HEAD -->
+
+<body
+	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
+	<div class="page-wrapper">
+		<!-- start header -->
+		<div class="page-header navbar navbar-fixed-top">
+			<div class="page-header-inner ">
+				<!-- logo start -->
+				<div class="page-logo">
+					<a href="index.html">
+						<img alt="" src="images/restaurant_logo_bz6_icon.ico">
+						<span class="logo-default">Hexplore</span> </a>
+				</div>
+				<!-- logo end -->
+				<ul class="nav navbar-nav navbar-left in">
+					<li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+				</ul>
+				
+				<!-- start mobile menu -->
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span></span>
+				</a>
+				<!-- end mobile menu -->
+				<!-- start header menu -->
+				<div class="top-menu">
+					
+						<!-- start notification dropdown -->
+						
+						<!-- end notification dropdown -->
+						<!-- start message dropdown -->
+						
+						<!-- end message dropdown -->
+						<!-- start manage user dropdown -->
+					<ul class="nav navbar-nav pull-right">	
+<div class="dropdown">
+  <button class="dropbtn">Setting</button>
+  <div class="dropdown-content">
+    <a href="user-profile-restaurant.html">profile</a>
+    <a href="mailto:shingalajaydeep1508@gmail">Help</a>
+    <a href="login-restaurant.html">Log out</a>
+  </div>
+</div>
+						
+						<!-- end manage user dropdown -->
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end header -->
+		<!-- start page container -->
+		<div class="page-container">
+			<!-- start sidebar menu -->
+			<div class="sidebar-container">
+				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+					<div id="remove-scroll">
+						<ul class="sidemenu page-header-fixed p-t-20" data-keep-expanded="false" data-auto-scroll="true"
+							data-slide-speed="200">
+							<li class="sidebar-toggler-wrapper hide">
+								<div class="sidebar-toggler">
+									<span></span>
+								</div>
+							</li>
+							<li class="sidebar-user-panel">
+								<div class="user-panel">
+									<div class="row">
+										<div class="sidebar-userpic">
+											<img src="images/img_avatar.png" class="img-responsive" alt=""> </div>
+									</div>
+									<div class="profile-usertitle">
+										<div class="sidebar-userpic-name" id="name"></div>
+										
+									</div>
+									<div class="sidebar-userpic-btn">
+										<a class="tooltips" href="user-profile-restaurant.html" data-placement="top"
+											data-original-title="Profile">
+											<i class="material-icons">person_outline</i>
+										</a>
+										
+										<a class="tooltips" href="login-restaurant.html" data-placement="top"
+											data-original-title="Logout">
+											<i class="material-icons">input</i>
+										</a>
+									</div>
+								</div>
+							</li>
+							
+							<li class="nav-item start">
+								<a href="index-traveller.html" class="nav-link nav-toggle">
+									<i class="material-icons">dashboard</i>
+									<span class="title">Dashboard</span>
+									
+								</a>
+								
+							</li>
+							<li class="nav-item">
+                                    <a href="#" class="nav-link nav-toggle">
+                                        <i class="material-icons">note_add</i>
+                                        <span class="title">Add Product</span>
+                                        <span class="arrow"></span>
+
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item">
+                                            <a href="add_restaurant.html" class="nav-link ">
+                                                <span class="title">Add Restaurants Details</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="all_restaurant.html" class="nav-link ">
+                                                <span class="title">View Restaurants Details</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="edit_restaurant.html" class="nav-link ">
+                                                <span class="title">Edit Restaurants Details</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                    <li class="nav-item">
+                                        <a href="contactus.html" class="nav-link nav-toggle">
+                                            <i class="material-icons">info</i>
+                                            <span class="title">Help</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="main-about.html" class="nav-link nav-toggle">
+                                            <i class="material-icons">language</i>
+                                            <span class="title">About us</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end sidebar menu -->
+			<!-- start page content -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">User Profile</div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="index-restaurant.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								
+								<li class="active">User Profile</li>
+							</ol>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<!-- BEGIN PROFILE SIDEBAR -->
+							<div class="profile-sidebar">
+								<div class="card card-topline-aqua">
+									<div class="card-body no-padding height-9">
+										<div class="row">
+											<div class="profile-userpic">
+												<img src="images/img_avatar.png" class="img-responsive" alt=""> </div>
+										</div>
+										<div class="profile-usertitle">
+											<div id="username" class="profile-usertitle-name">  </div>
+											
+										</div>
+										<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Total Entries</b> <a id="totalentry" class="pull-right"></a>
+											</li>
+											
+										</ul>
+										<!-- END SIDEBAR USER TITLE -->
+										<!-- SIDEBAR BUTTONS -->
+										
+										<!-- END SIDEBAR BUTTONS -->
+									</div>
+								</div>
+								
+								
+								
+							</div>
+							<!-- END BEGIN PROFILE SIDEBAR -->
+							<!-- BEGIN PROFILE CONTENT -->
+							<div class="profile-content">
+								<div class="row">
+									<div class="profile-tab-box">
+										<div class="p-l-20">
+											<ul class="nav ">
+												<li class="nav-item tab-all"><a class="nav-link active show"
+														onclick="myf2()" href="#tab1" data-toggle="tab">About Me</a></li>
+												
+												<li class="nav-item tab-all p-l-20"><a class="nav-link" href="#tab3"
+														onclick="myf()" data-toggle="tab">Settings</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="white-box">
+										<!-- Tab panes -->
+										<div id="mydata">
+											</div>
+										<div class="tab-content">
+										
+											<div class="tab-pane active fontawesome-demo" id="tab1">
+											<div id="biography">
+											<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Full Name</b> <b> <a id="username2" class="pull-right"></a><b>
+											</li>
+											
+											</ul>
+											<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Email </b> <b> <a id="email" class="pull-right"></a><b>
+											</li>
+											
+											</ul>
+											<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Company </b> <b> <a id="company" class="pull-right"></a><b>
+											</li>
+											
+											</ul>
+											<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>State </b> <b> <a id="state" class="pull-right"></a><b>
+											</li>
+											
+											</ul>
+											<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>City </b> <b> <a id="city" class="pull-right"></a><b>
+											</li>
+											
+											</ul>
+											<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Address</b> <b> <a id="address" class="pull-right"></a><b>
+											</li>
+											
+											</ul>
+											<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Mobile number</b> <b> <a id="mn" class="pull-right"></a><b>
+											</li>
+											
+											</ul>
+											<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Gender </b> <b> <a id="gender" class="pull-right"></a><b>
+											</li>
+											
+											</ul>
+											</div> 
+											<div id="mydata">
+											</div>
+									
+											
+											
+										
+										
+															
+										</div>
+										
+										</div>
+									</div>
+									
+								</div>
+							</div>
+							<!-- End Doctor Chat -->
+							<!-- Start Setting Panel -->
+							
+						</div>
+					</div>
+				</div>
+				<!-- end chat sidebar -->
+			</div>
+			<!-- end page container -->
+			<!-- start footer -->
+			<div class="page-footer">
+				<div class="page-footer-inner"> 2020 &copy; Hexplore					
+			<!--	<a href="mailto:redstartheme@gmail.com" target="_top" class="makerCss">RedStar Theme</a> -->
+				</div>
+				<div class="scroll-to-top">
+					<i class="icon-arrow-up"></i>
+				</div>
+			</div>
+			<!-- end footer -->
+		</div>
+	</div>
+	<!-- start js include path -->
+	<script src="assets/plugins/jquery/jquery.min.js"></script>
+	<script src="assets/plugins/popper/popper.min.js"></script>
+	<script src="assets/plugins/jquery-blockui/jquery.blockui.min.js"></script>
+	<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Common js-->
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/layout.js"></script>
+	<script src="assets/js/theme-color.js"></script>
+	<!-- Material -->
+	<script src="assets/plugins/material/material.min.js"></script>
+	<!-- animation -->
+	<script src="assets/js/pages/ui/animations.js"></script>
+	<!-- end js include path -->
+	
+   
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use   https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+
+
+
+    <script src="user-profile-restaurant.js"></script>
+
+
+
+
+
+</body>
+
+</html>

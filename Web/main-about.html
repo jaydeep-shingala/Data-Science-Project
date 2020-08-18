@@ -1,0 +1,177 @@
+<html>
+	<head>
+		<title>Hexplore - About</title>
+		<link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+		<link rel="stylesheet"href="owl_clouser/owl.carousel.min.css">
+        <link rel="stylesheet" href="owl_clouser/owl.theme.default.min.css">
+		<script src="owl_clouser/jquery.min.js"></script>
+		<script src="owl_clouser/owl.carousel.js"></script>
+        <script>
+			$(document).ready(function() {
+			 $("#owl-one").owlCarousel({
+				nav:true,
+				items:1,
+				loop:true,
+				autoplay:true,
+				 autoplayTimeout: 1500,
+             });
+		});
+		</script>
+		<style>
+		#owl-one{
+		position:absolute;
+		top:150px;
+		left:50px;
+		height:470px;
+		width:840px;
+		}
+		.demo1 img{
+			height:470px;
+			width:840px;
+		}
+		.owl-carousel .owl-nav button.owl-next{
+		position:absolute;
+		top:210px;
+		left:800px;
+		color:#dce0dd;
+		font:inherit;
+		font-size:60px;
+		font-weight:bold;
+		}
+		.owl-carousel .owl-nav button.owl-next:hover{
+		border:none;
+		color:black;
+		}
+		.owl-carousel .owl-nav button.owl-prev{
+		position:absolute;
+		top:210px;
+		left:14px;
+		color:#dce0dd;
+		font:inherit;
+		font-size:60px;
+		font-weight:bold;
+		}
+		.owl-carousel .owl-nav button.owl-prev:hover{
+		border:none;
+		color:black;
+		}
+		</style>
+		<style>
+			*{
+		margin:0px;
+		padding:0px;
+		}
+		body{
+		font-family:"Antic";
+		color:#f7f7f7;
+		}
+		header{
+		background-color:#222c3c;
+		height:75px;
+		width:100%;
+		}
+		.child-header-1{
+		float:left;
+		margin:10px 0px 0px 110px;
+		font-size:22px;
+		}
+		.child-header-2{
+		float:right;
+		margin:5px 70px 0px 0px;
+		}
+		.nav {
+		  list-style-type: none;
+		  text-align: center;
+		  margin: 0;
+		  padding: 0;
+		}
+		.nav li{
+		margin-top:18px;
+		font-size:20px;
+		padding:0px 20px 0px 20px;
+		display:inline-block;
+		border-right:1px solid #f7f7f7;
+		}
+		li a{
+		text-decoration:none;
+		color:#f7f7f7;
+		}
+		li a:hover{
+		color:#02e0f5;
+		}
+		.main-div{
+			background-image: url("images/slider-1/img1.png");
+			height:700px;
+			background-color:black;
+			position:relative;
+			overflow:hidden;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  position: relative;
+		}
+		.overlay{
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+		opacity:0.9;
+		background: linear-gradient(to bottom right, #161616 0%,rgba(22,22,22,0.88) 75%,rgba(22,22,22,0.78) 100%);
+		}
+		.inner-text-1{
+		position:absolute;
+		top:10px;
+		left:400px;
+		font-family:"Dancing Script";
+		font-size:40px;
+		}
+		.div-text-2{
+		position:absolute;
+		top:90px;
+		left:940px;
+		width:330px;
+		height:700px;
+		font-family:"Sacramento";
+		font-size:40px;
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="main-header">
+				<div class="child-header-1">
+					<h1>HEXPLORE</h1>
+				</div>
+				<div class="child-header-2">
+					<ul class="nav">
+						<li ><a href="main.html">Home</a></li>
+						<li ><a href="main-about.html">About</a></li>
+						<li ><a href="main-project.html">Project</a></li>
+						<li style="border-right:none;"><a href="main-contact.html">Contact Us</a></li>
+				    </ul>
+				</div>
+			</div>
+		</header>
+		<div class="main-div">
+			<div class="overlay"></div>
+			<div class="inner-text-1">India's Proud</div>
+			<div class="div-text-2"><p class="inner-text-2">Every part of our county is very rich in its heritage and culture how ever the awarness about
+            the same can be increased among the local resident through our android mobile application</p></div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div id="owl-one" class="owl-carousel">
+				<div class="demo1" ><img src="images/slider-1/img0.jpg"></div>
+				<div class="demo1" ><img src="images/slider-1/img1.png"></div>
+				<div class="demo1" ><img src="images/slider-1/img2.jpg"></div>
+				<div class="demo1" ><img src="images/slider-1/img3.jpg"></div>
+				<div class="demo1" ><img src="images/slider-1/img4.jpg"></div>
+				<div class="demo1" ><img src="images/slider-1/img5.jpg"></div>
+				<div class="demo1" ><img src="images/slider-1/img6.jpg"></div>
+			</div>
+		</div>
+	</body>
+</html>
